@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m0uss1 — Mohammed Ali Moussi | Designer &amp; Video Editor</title>
+  <meta name="description" content="Mohammed Ali Moussi (m0uss1) — Designer, video editor & developer from Tunisia. Portfolio of thumbnails, logos, banners and video edits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Square surveillance-tracker cursor -->
+  <div class="cursor-tracker"></div>
+  <div class="cursor-ghost"></div>
+
+  <!-- CRT scanline overlay -->
+  <div class="crt"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/logo.webp" alt="m0uss1 logo" onerror="this.style.display='none'" />
+        <span>m0<span class="nav-brand-mark">uss</span>1</span>
+      </a>
+      <div class="nav-controls">
+        <div class="lang-switch">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="tn">TN</button>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">dark</button>
+        <button class="hamburger" aria-label="Menu">☰</button>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#work" data-i18n="nav.work">Work</a></li>
+        <li><a href="#showreel" data-i18n="nav.showreel">Showreel</a></li>
+        <li><a href="#links" data-i18n="nav.links">Links</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-scanline"></div>
+    <div class="hero-content">
+      <div class="hero-col hero-col-left">
+        <div class="hero-live"><span class="rec-dot"></span>REC</div>
+        <span class="hero-handle mono"><span class="id-prefix">ID ::</span> m0uss1</span>
+        <p class="hero-sub" data-i18n="hero.sub">Designer, video editor &amp; developer crafting cinematic visuals and clean interfaces.</p>
+      </div>
+      <div class="hero-col hero-col-right">
+        <h1><span id="scramble" data-text="M0USS1"></span><span class="typing-caret">_</span></h1>
+        <p class="hero-sub mono" data-i18n="about.tagline">Designer • Editor • Developer</p>
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary">
+            <span data-i18n="hero.cta.work">View Work</span> →
+          </a>
+          <a href="links.html" class="btn btn-outline" data-i18n="hero.cta.hire">
+            <span>Hire Me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">↓</div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head reveal">
+      <div class="section-eyebrow" data-i18n="about.eyebrow">About Me</div>
+      <h2 data-i18n="about.title">The person behind the edits</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="lead" data-i18n="about.lead">Hi, I'm Mohammed Ali Moussi — known online as m0uss1. A designer &amp; video editor from Tunisia with a passion for craft.</p>
+        <p data-i18n="about.p1">I blend visual design, video storytelling and a bit of code to create things that stand out. My background in Bac Info (computer science) gives me a technical edge on every project.</p>
+        <p data-i18n="about.p2">From Minecraft &amp; Discord thumbnails and brand logos to full video edits, I focus on clean, bold, cinematic results.</p>
+        <div class="exp-strip">
+          <div class="exp-item">
+            <div class="exp-num">6<span>+</span></div>
+            <div class="exp-label" data-i18n="about.exp.years">Years</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-num">7</div>
+            <div class="exp-label" data-i18n="about.exp.months">Months</div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-num">99<span>+</span></div>
+            <div class="exp-label" data-i18n="about.exp.projects">Projects</div>
+          </div>
+        </div>
+        <div style="margin-top:1.2rem">
+          <div style="color:var(--text-muted);font-size:.9rem;margin-bottom:.5rem" data-i18n="about.tools">Tools I use:</div>
+          <div class="pill-row">
+            <span class="pill">DaVinci Resolve</span>
+            <span class="pill">Photoshop</span>
+            <span class="pill">Illustrator</span>
+            <span class="pill">After Effects</span>
+            <span class="pill">HTML/CSS</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="skills reveal">
+        <div class="skills-title" data-i18n="about.skills.title">Craft Tracks</div>
+        <div class="pie-grid">
+          <div class="pie-item">
+            <div class="pie" data-val="90" data-label="design">
+              <div class="pie-inner"><span class="pie-val">90%</span></div>
+            </div>
+            <div class="pie-name" data-i18n="about.skill.design">Design</div>
+          </div>
+          <div class="pie-item">
+            <div class="pie" data-val="95" data-label="video">
+              <div class="pie-inner"><span class="pie-val">95%</span></div>
+            </div>
+            <div class="pie-name" data-i18n="about.skill.video">Video Editing</div>
+          </div>
+          <div class="pie-item">
+            <div class="pie" data-val="85" data-label="motion">
+              <div class="pie-inner"><span class="pie-val">85%</span></div>
+            </div>
+            <div class="pie-name" data-i18n="about.skill.motion">Motion Graphics</div>
+          </div>
+          <div class="pie-item">
+            <div class="pie" data-val="70" data-label="code">
+              <div class="pie-inner"><span class="pie-val">70%</span></div>
+            </div>
+            <div class="pie-name" data-i18n="about.skill.code">Coding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="section-head reveal">
+      <div class="section-eyebrow" data-i18n="work.eyebrow">Portfolio</div>
+      <h2 data-i18n="work.title">Selected Work</h2>
+      <p data-i18n="work.sub">A collection of thumbnails, logos, banners and video edits. Hover to preview.</p>
+    </div>
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all" data-i18n="work.filter.all">All</button>
+      <button class="filter-btn" data-filter="thumbnails" data-i18n="work.filter.thumbnails">Thumbnails</button>
+      <button class="filter-btn" data-filter="branding" data-i18n="work.filter.branding">Logos &amp; Banners</button>
+      <button class="filter-btn" data-filter="video" data-i18n="work.filter.video">Video</button>
+      <button class="filter-btn" data-filter="code" data-i18n="work.filter.code">Code</button>
+    </div>
+    <div class="gallery reveal">
+      <div class="card" data-category="thumbnails" data-image="assets/images/work-1.png">
+        <img src="assets/images/work-1.png" alt="Minecraft Thumbnail" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.1">Minecraft Thumbnail</h3><span data-i18n="work.filter.thumbnails">Thumbnails</span></div>
+      </div>
+      <div class="card" data-category="branding" data-image="assets/images/work-2.png">
+        <img src="assets/images/work-2.png" alt="Discord Server Banner" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.2">Discord Server Banner</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
+      </div>
+      <div class="card" data-category="branding" data-image="assets/images/work-3.png">
+        <img src="assets/images/work-3.png" alt="Gaming Logo" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.3">Gaming Logo</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
+      </div>
+      <div class="card" data-category="video" data-image="assets/images/work-4.png">
+        <img src="assets/images/work-4.png" alt="Video Edit" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.4">Video Edit</h3><span data-i18n="work.filter.video">Video</span></div>
+      </div>
+      <div class="card" data-category="thumbnails" data-image="assets/images/work-5.png">
+        <img src="assets/images/work-5.png" alt="Animated Thumbnail" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.5">Animated Thumbnail</h3><span data-i18n="work.filter.thumbnails">Thumbnails</span></div>
+      </div>
+      <div class="card" data-category="branding" data-image="assets/images/work-6.png">
+        <img src="assets/images/work-6.png" alt="Brand Icon" loading="lazy" />
+        <div class="card-overlay"><h3 data-i18n="work.card.title.6">Brand Icon</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
+      </div>
+    </div>
+    <p class="hint" data-i18n="work.hint">Drop your design &amp; video files into assets/images to replace these placeholders.</p>
+  </section>
+
+  <!-- SHOWREEL -->
+  <section id="showreel">
+    <div class="section-head reveal">
+      <div class="section-eyebrow" data-i18n="showreel.eyebrow">Showreel</div>
+      <h2 data-i18n="showreel.title">My Work in Motion</h2>
+    </div>
+    <div class="showreel-box reveal">
+      <div class="showreel-video">
+        <div class="showreel-placeholder">
+          <div class="big">▶</div>
+          <div data-i18n="showreel.coming">SHOWREEL COMING SOON</div>
+        </div>
+      </div>
+      <div class="showreel-note" data-i18n="showreel.note">Drop your showreel video in assets/videos/showreel.mp4 and it will play here.</div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links">
+    <div class="section-head reveal">
+      <div class="section-eyebrow" data-i18n="links.eyebrow">Connect</div>
+      <h2 data-i18n="links.title">Find me everywhere</h2>
+    </div>
+    <div class="links-panel reveal">
+      <p style="color:var(--text-muted);margin-bottom:1.5rem" data-i18n="links.panel">Get all my socials &amp; latest work on my links hub — just like a link-in-bio page.</p>
+      <a href="links.html" class="btn btn-primary" data-i18n="links.open">Open My Links</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><span data-i18n="footer.rights">© m0uss1. All rights reserved.</span> · <span data-i18n="footer.made">Made with</span>
+      <span class="heart">♥</span>
+      <span data-i18n="footer.by">by m0uss1</span></p>
+    <br />
+    <a href="#hero" style="color:var(--accent);text-decoration:none" data-i18n="footer.backTop">Back to top</a>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Work preview" />
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
