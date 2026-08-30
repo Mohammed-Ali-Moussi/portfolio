@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m0uss1 — Gallery</title>
+  <meta name="description" content="All work by m0uss1 — thumbnails, logos, banners, video edits and YouTube videos." />
+  <meta property="og:title" content="m0uss1 — All Work" />
+  <meta property="og:description" content="Searchable gallery of thumbnails, logos, banners and edits." />
+  <meta property="og:image" content="assets/images/work-1.png" />
+  <link rel="icon" type="image/png" href="assets/logo.ico" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("m0uss1-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <div class="crt"></div>
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-[1000] border-b border-[var(--border)] bg-[var(--nav-bg)] px-6 py-3 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-[1100px] items-center justify-between gap-4">
+      <a href="index.html" class="inline-flex items-center gap-2 font-mono text-sm font-bold uppercase tracking-widest no-underline text-[var(--text-muted)] hover:text-[var(--accent)]">
+        <span class="text-[var(--accent)]">←</span> m0uss1
+      </a>
+      <div class="flex items-center gap-2">
+        <div class="lang-dropdown">
+          <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="lang-label">EN</span>
+            <span class="lang-chevron"></span>
+          </button>
+          <div class="lang-menu" role="listbox" aria-label="Select language">
+            <button class="lang-opt" data-lang="en" role="option">EN<span class="lang-name">English</span></button>
+            <button class="lang-opt" data-lang="fr" role="option">FR<span class="lang-name">Français</span></button>
+            <button class="lang-opt" data-lang="tn" role="option">TN<span class="lang-name">Darija Tounsi</span></button>
+          </div>
+        </div>
+        <button class="theme-toggle grid h-9 place-items-center rounded-md px-4 font-mono text-[0.72rem] font-bold uppercase tracking-wider"
+                aria-label="Toggle theme">dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="mx-auto max-w-[1100px] px-6 pb-4 pt-12 text-center">
+    <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="work.eyebrow">Portfolio</div>
+    <h1 class="mb-6 text-[clamp(2.2rem,6vw,3.6rem)] font-bold" data-i18n="gallery.title">All Work</h1>
+    <div class="mx-auto mb-6 flex max-w-[760px] flex-col items-center gap-4 sm:flex-row sm:justify-center">
+      <input type="search" id="gallery-search" class="search-input" data-i18n-placeholder="gallery.searchPh" placeholder="Search the work..." autocomplete="off" />
+      <span id="gallery-count" class="mono text-sm text-[var(--text-muted)]"></span>
+    </div>
+    <div id="gallery-chips" class="flex flex-wrap justify-center gap-3"></div>
+  </header>
+
+  <!-- MASONRY FEED -->
+  <main class="mx-auto max-w-[1100px] px-6 py-8">
+    <div id="gallery-feed" class="masonry-gallery"></div>
+    <div id="gallery-empty" class="gallery-empty mono" style="display:none" data-i18n="gallery.empty">No results found — try another search or category.</div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[var(--border)] px-6 py-10 text-center text-sm text-[var(--text-muted)]">
+    <p><span data-i18n="footer.rights">© m0uss1. All rights reserved.</span> · <span data-i18n="footer.made">Made with</span>
+      <span class="heart text-[var(--accent)]">♥</span>
+      <span data-i18n="footer.by">by m0uss1</span></p>
+    <br />
+    <a href="index.html" class="text-[var(--accent)] no-underline" data-i18n="link.back">Back to Portfolio</a>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+    <div id="lightbox-media" class="lightbox-media"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

@@ -44,18 +44,43 @@
     } else {
       root.setAttribute("dir", "ltr");
     }
-    document.querySelectorAll(".lang-btn").forEach(function (b) {
-      b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+    document.querySelectorAll(".lang-opt").forEach(function (o) {
+      o.classList.toggle("active", o.getAttribute("data-lang") === lang);
     });
+    const label = document.querySelector(".lang-dropdown .lang-label");
+    if (label) label.textContent = lang.toUpperCase();
     window.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
   }
 
+  const langDropdown = document.querySelector(".lang-dropdown");
+  const langTrigger = document.querySelector(".lang-trigger");
+  if (langDropdown && langTrigger) {
+    langTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle("open");
+      langTrigger.setAttribute("aria-expanded", langDropdown.classList.contains("open"));
+    });
+    document.addEventListener("click", function (e) {
+      if (langDropdown && !e.target.closest(".lang-dropdown")) {
+        langDropdown.classList.remove("open");
+        langTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
   document.addEventListener("click", function (e) {
-    const btn = e.target.closest(".lang-btn");
-    if (!btn) return;
-    currentLang = btn.getAttribute("data-lang");
+    const opt = e.target.closest(".lang-opt");
+    if (!opt) return;
+    currentLang = opt.getAttribute("data-lang");
+translate(currentLang);
+
+  window.addEventListener("i18nready", function () {
     translate(currentLang);
+  });
     localStorage.setItem(STORE_LANG, currentLang);
+    if (langDropdown) {
+      langDropdown.classList.remove("open");
+      langTrigger.setAttribute("aria-expanded", "false");
+    }
   });
 
   translate(currentLang);
@@ -75,6 +100,52 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    /* ---------- Preloader boot sequence ---------- */
+    const preloader = document.getElementById("preloader");
+    const preloaderFill = document.getElementById("preloader-fill");
+    const preloaderText = document.getElementById("preloader-text");
+    if (preloader) {
+      const bootMsgs = ["BOOTING...", "LOADING MODULES", "m0uss1 SYSTEMS ONLINE"];
+      let pct = 0;
+      const bootInterval = setInterval(function () {
+        pct = Math.min(pct + Math.round(Math.random() * 14 + 6), 100);
+        if (preloaderFill) preloaderFill.style.width = pct + "%";
+        if (preloaderText && pct < 100) preloaderText.textContent = bootMsgs[Math.floor(pct / 34)];
+        if (pct >= 100) {
+          clearInterval(bootInterval);
+          if (preloaderText) preloaderText.textContent = bootMsgs[2];
+          setTimeout(function () {
+            preloader.classList.add("done");
+            document.body.classList.add("loaded");
+            setTimeout(function () {
+              if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+            }, 400);
+          }, 350);
+        }
+      }, 120);
+    } else {
+      document.body.classList.add("loaded");
+    }
+
+    /* ---------- Scroll progress bar + back to top ---------- */
+    const progressBar = document.getElementById("progress-bar");
+    const backTop = document.getElementById("back-top");
+    function onScroll() {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const scrolled = total > 0 ? doc.scrollTop / total : 0;
+      if (progressBar) progressBar.style.width = scrolled * 100 + "%";
+      if (backTop) backTop.classList.toggle("show", doc.scrollTop > 400);
+      highlightNav();
+    }
+    if (backTop) {
+      backTop.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     /* ---------- Active nav link on scroll ---------- */
     const sections = document.querySelectorAll("section[id]");
     const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
@@ -90,7 +161,6 @@
         a.classList.toggle("active", a.getAttribute("href") === "#" + current);
       });
     }
-    window.addEventListener("scroll", highlightNav);
     highlightNav();
 
     /* ---------- Scroll reveal ---------- */
@@ -200,6 +270,24 @@
         }, 45);
       });
     })();
+
+    /* ---------- Mouse-follow glow edge ---------- */
+    (function () {
+      const cards = document.querySelectorAll(".glow-card");
+      if (!cards.length || !window.matchMedia("(hover: hover)").matches) return;
+      let raf = 0;
+      document.addEventListener("mousemove", function (e) {
+        if (raf) return;
+        raf = window.requestAnimationFrame(function () {
+          raf = 0;
+          cards.forEach(function (c) {
+            const r = c.getBoundingClientRect();
+            c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+            c.style.setProperty("--my", (e.clientY - r.top) + "px");
+          });
+        });
+      });
+    })();
   });
 
   /* ---------- Square surveillance-tracker cursor ---------- */
@@ -231,7 +319,7 @@
     loopGhost();
 
     document
-      .querySelectorAll("a, button, .card, .filter-btn, .link-card, .theme-toggle, .lang-btn")
+      .querySelectorAll("a, button, .card, .gcard, .filter-btn, .link-card, .theme-toggle, .lang-trigger, .lang-opt")
       .forEach(function (el) {
         el.addEventListener("mouseenter", function () {
           tracker.classList.add("hover");

@@ -4,116 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>m0uss1 — Links</title>
-  <meta name="description" content="m0uss1 (Mohammed Ali Moussi) — all links: YouTube, Instagram, Discord, email and work." />
+  <meta name="description" content="m0uss1 (Mohammed Ali Moussi) — designer, video editor & developer. All links: YouTube, Instagram, Fiverr." />
+  <link rel="icon" type="image/png" href="assets/logo.ico" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("m0uss1-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/site.css" />
+  <style>
+    .card-surface {
+      background:
+        radial-gradient(120% 90% at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 55%),
+        var(--bg-card);
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    html[data-theme="light"] .card-surface {
+      background:
+        radial-gradient(120% 90% at 50% 0%, rgba(9, 9, 11, 0.05) 0%, transparent 55%),
+        var(--bg-card);
+    }
+  </style>
 </head>
-<body class="links-body">
-  <div class="cursor-tracker"></div>
-  <div class="cursor-ghost"></div>
+<body class="flex min-h-screen items-center justify-center p-4 text-[var(--text)] antialiased">
 
-  <div class="crt"></div>
-
-  <div class="links-top">
-    <a href="index.html" class="btn btn-outline" style="padding:.5rem 1rem;font-size:.85rem" data-i18n="link.back">Back to Portfolio</a>
-    <div class="links-controls">
-      <div class="lang-switch">
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-        <button class="lang-btn" data-lang="tn">TN</button>
+  <!-- Top bar: back link + lang dropdown + theme toggle -->
+  <div class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 py-3">
+    <a href="index.html"
+       class="font-mono text-xs text-[var(--text-muted)] underline underline-offset-4 transition hover:text-[var(--accent)]"
+       data-i18n="link.back">Back to Portfolio</a>
+    <div class="flex items-center gap-2">
+      <div class="lang-dropdown">
+        <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-label">EN</span>
+          <span class="lang-chevron"></span>
+        </button>
+        <div class="lang-menu" role="listbox" aria-label="Select language">
+          <button class="lang-opt" data-lang="en" role="option">EN<span class="lang-name">English</span></button>
+          <button class="lang-opt" data-lang="fr" role="option">FR<span class="lang-name">Français</span></button>
+          <button class="lang-opt" data-lang="tn" role="option">TN<span class="lang-name">Darija Tounsi</span></button>
+        </div>
       </div>
-      <button class="theme-toggle" aria-label="Toggle theme">dark</button>
+      <button class="theme-toggle grid h-9 place-items-center rounded-md px-4 font-mono text-[11px] font-bold uppercase tracking-[0.15em]"
+              aria-label="Toggle theme">dark</button>
     </div>
   </div>
 
-  <main class="links-main">
-    <div class="links-profile">
-      <img class="links-avatar" src="assets/logo.webp" alt="m0uss1" onerror="this.alt='m0uss1'" />
-      <h1 data-i18n="linksPage.title">m0uss1</h1>
-      <div class="handle" data-i18n="linksPage.handle">@m0uss1</div>
-      <div class="tagline" data-i18n="linksPage.tagline">Designer • Video Editor • Developer TUN</div>
+  <main class="card-surface w-full max-w-[375px] overflow-hidden rounded-[20px] shadow-2xl shadow-black/50 ring-1 ring-white/5">
+
+    <!-- Hero -->
+    <div class="relative h-44">
+      <img src="assets/images/hero-bg.webp" alt="m0uss1" class="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-90" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-[var(--bg-card)]"></div>
     </div>
 
-    <!-- WORK -->
-    <div class="section-divider" data-i18n="links.lbl.work">My Work</div>
-    <div class="links-list">
-      <a class="link-card" href="index.html#work">
-        <span class="link-icon">🖼️</span>
-        <span class="link-label">
-          <span data-i18n="link.thumbnails">Thumbnails</span>
-          <span class="link-sub" data-i18n="link.thumbnails.sub">My latest designs</span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
-      <a class="link-card" href="index.html#work">
-        <span class="link-icon">🎨</span>
-        <span class="link-label">
-          <span data-i18n="link.branding">Logos & Banners</span>
-          <span class="link-sub" data-i18n="link.branding.sub">Branding work</span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
-      <a class="link-card" href="#">
-        <span class="link-icon">🎬</span>
-        <span class="link-label">
-          <span>Showreel</span>
-          <span class="link-sub">Video edits & showreel</span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
+    <!-- Profile -->
+    <div class="px-6 pb-7">
+      <img src="assets/logo.webp" alt="m0uss1"
+           class="relative z-10 mx-auto -mt-16 h-28 w-28 rounded-full border-4 border-[var(--bg-card)] object-cover shadow-xl" />
+      <h1 class="mt-3 text-center text-2xl font-extrabold uppercase tracking-tight"
+          data-i18n="linksPage.title">M0uss1</h1>
+      <p class="text-center text-sm text-[var(--text-muted)]" data-i18n="linksPage.handle">@m0uss1</p>
+      <div class="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-[var(--text-muted)]">
+        <span class="status-dot"></span>
+        <span data-i18n="linksPage.status">online — active &amp; open to work</span>
+      </div>
     </div>
 
-    <!-- SOCIALS -->
-    <div class="section-divider" data-i18n="links.lbl.socials">Socials</div>
-    <div class="links-list">
-      <a class="link-card" href="https://youtube.com/@elmoussi" target="_blank" rel="noopener">
-        <span class="link-icon">▶️</span>
-        <span class="link-label">
-          <span data-i18n="link.youtube">YouTube</span>
-          <span class="link-sub" data-i18n="link.youtube.sub">@elmoussi</span>
-        </span>
-        <span class="link-arrow">→</span>
+    <!-- Social icons -->
+    <div class="flex items-center justify-center gap-3">
+      <a href="https://instagram.com/m0uss1" target="_blank" rel="noopener" aria-label="Instagram"
+         class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-md transition-transform duration-200 hover:scale-110 hover:shadow-lg">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
       </a>
-      <a class="link-card" href="https://instagram.com/m0uss1" target="_blank" rel="noopener">
-        <span class="link-icon">📷</span>
-        <span class="link-label">
-          <span data-i18n="link.instagram">Instagram</span>
-          <span class="link-sub" data-i18n="link.instagram.sub">@m0uss1</span>
-        </span>
-        <span class="link-arrow">→</span>
+      <a href="https://youtube.com/@elmoussi" target="_blank" rel="noopener" aria-label="YouTube"
+         class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-md transition-transform duration-200 hover:scale-110 hover:shadow-lg">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6Z" />
+        </svg>
       </a>
-      <a class="link-card" href="#">
-        <span class="link-icon">💬</span>
-        <span class="link-label">
-          <span data-i18n="link.discord">Discord</span>
-          <span class="link-sub" data-i18n="link.discord.sub">m0uss1</span>
-        </span>
-        <span class="link-arrow">→</span>
+      <a href="#" aria-label="Fiverr"
+         class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-md transition-transform duration-200 hover:scale-110 hover:shadow-lg">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M9.9 21a.9.9 0 0 1-.9-.9V3.9c0-.5.4-.9.9-.9h6.4c1.9 0 3.3 1.3 3.3 3.3 0 1.9-1.4 3.2-3.3 3.2h-2.4v2.2h2.1c1 0 1.8.8 1.8 1.8s-.8 1.8-1.8 1.8h-2.1v3.8c0 .5-.4.9-.9.9Z" />
+        </svg>
       </a>
     </div>
 
-    <!-- REACH -->
-    <div class="section-divider" data-i18n="links.lbl.reach">Reach Me</div>
-    <div class="links-list">
-      <a class="link-card" href="mailto:ilovemoussi@gmail.com" data-copy="ilovemoussi@gmail.com">
-        <span class="link-icon">✉️</span>
-        <span class="link-label">
-          <span data-i18n="link.email">Email</span>
-          <span class="link-sub" data-i18n="link.email.sub">ilovemoussi@gmail.com</span>
+    <!-- Bio -->
+    <p class="mx-auto mt-5 max-w-[280px] text-center text-[13px] leading-relaxed text-[var(--text-muted)]"
+       data-i18n="linksPage.bio">Jack of all trades, master of none</p>
+
+    <!-- Portfolio link card -->
+    <a href="index.html#work"
+       class="group mx-6 mt-6 flex items-center justify-between gap-3 rounded-[12px] bg-gradient-to-r from-[#1a0000]/80 to-[#3a0000]/80 p-3 ring-1 ring-[#D90429]/30 backdrop-blur transition hover:ring-[#D90429]/60">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/work-1.png" alt="Work thumbnail" class="h-12 w-12 rounded-lg object-cover" />
+        <span class="text-base font-bold text-[#ff2d2d]" data-i18n="linksPage.portfolio">Portfolio</span>
+      </div>
+      <svg class="h-4 w-4 text-[#ff2d2d] transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </a>
+
+    <!-- Input pill -->
+    <form class="mx-6 mt-5 flex items-center gap-1 rounded-full border border-black/10 bg-white py-1 pl-4 pr-1 shadow-md">
+      <input type="email" name="email" inputmode="email" autocomplete="email" required
+             class="w-full min-w-0 flex-1 bg-transparent text-sm text-zinc-800 outline-none placeholder:text-zinc-400"
+             data-i18n-placeholder="linksPage.emailPh" />
+      <button type="submit"
+              class="flex shrink-0 items-center gap-1.5 rounded-full border border-black/10 bg-black/[0.04] py-1.5 pl-4 pr-1.5 text-sm font-medium text-zinc-700 backdrop-blur transition hover:border-black/20 hover:bg-black/[0.08] hover:shadow-[0_0_12px_rgba(0,0,0,0.15)]">
+        <span data-i18n="linksPage.connect">Connect with</span>
+        <span class="flex h-6 w-6 overflow-hidden rounded-full bg-zinc-400">
+          <img src="assets/logo.webp" alt="" class="h-full w-full object-cover" />
         </span>
-        <span class="link-arrow">→</span>
-      </a>
-    </div>
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <footer class="mt-6 flex items-center justify-center gap-x-3 pb-7 text-xs text-[var(--text-muted)]">
+      <a href="#" class="underline underline-offset-2 transition hover:text-[var(--accent)]" data-i18n="linksPage.privacy">Privacy Policy</a>
+      <span class="text-[var(--border)]">|</span>
+      <a href="#" class="underline underline-offset-2 transition hover:text-[var(--accent)]" data-i18n="linksPage.terms">Terms</a>
+      <span class="text-[var(--border)]">|</span>
+      <a href="#" class="underline underline-offset-2 transition hover:text-[var(--accent)]" data-i18n="linksPage.report">Report</a>
+    </footer>
+
   </main>
-
-  <footer class="links-footer">
-    <p>© m0uss1 — Made with <span class="heart">♥</span></p>
-  </footer>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/links.js"></script>
+  <script>
+    (function () {
+      var form = document.querySelector("form[class*=email-pill], form input[type=email]");
+      var emailForm = form ? form.closest("form") : null;
+      if (!emailForm) return;
+      emailForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = emailForm.querySelector("input").value.trim() || emailForm.querySelector("input").getAttribute("placeholder");
+        window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent("Hey m0uss1!");
+      });
+    })();
+  </script>
 </body>
 </html>

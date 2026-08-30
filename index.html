@@ -3,14 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m0uss1 — Mohammed Ali Moussi | Designer &amp; Video Editor</title>
+  <title>m0uss1 — Portfolio | Designer &amp; Video Editor</title>
   <meta name="description" content="Mohammed Ali Moussi (m0uss1) — Designer, video editor & developer from Tunisia. Portfolio of thumbnails, logos, banners and video edits." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="m0uss1 — Mohammed Ali Moussi" />
+  <meta property="og:description" content="Designer, video editor & developer from Tunisia." />
+  <meta property="og:image" content="assets/images/work-1.png" />
+  <link rel="icon" type="image/png" href="assets/logo.ico" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("m0uss1-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
+  <!-- Preloader boot sequence -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-box">
+      <div class="preloader-text" id="preloader-text">BOOTING...</div>
+      <div class="preloader-bar"><div class="preloader-fill" id="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- Back to top -->
+  <button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
   <!-- Square surveillance-tracker cursor -->
   <div class="cursor-tracker"></div>
   <div class="cursor-ghost"></div>
@@ -19,23 +47,30 @@
   <div class="crt"></div>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <img src="assets/logo.webp" alt="m0uss1 logo" onerror="this.style.display='none'" />
-        <span>m0<span class="nav-brand-mark">uss</span>1</span>
+  <nav class="fixed inset-x-0 top-0 z-[1000] border-b border-[var(--border)] bg-[var(--nav-bg)] px-6 py-3 backdrop-blur-xl">
+    <div class="nav-inner mx-auto flex max-w-[1100px] items-center justify-between gap-4">
+      <a href="#hero" class="nav-logo flex items-center gap-2 text-lg font-bold uppercase tracking-widest text-[var(--text)] no-underline">
+        <img src="assets/images/name.png" alt="m0uss1 logo" onerror="this.style.display='none'" class="h-11 w-20 rounded-md object-cover" />
       </a>
-      <div class="nav-controls">
-        <div class="lang-switch">
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="fr">FR</button>
-          <button class="lang-btn" data-lang="tn">TN</button>
+      <div class="nav-controls ml-auto flex items-center gap-2">
+        <div class="lang-dropdown">
+          <button class="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="lang-label">EN</span>
+            <span class="lang-chevron"></span>
+          </button>
+          <div class="lang-menu" role="listbox" aria-label="Select language">
+            <button class="lang-opt" data-lang="en" role="option">EN<span class="lang-name">English</span></button>
+            <button class="lang-opt" data-lang="fr" role="option">FR<span class="lang-name">Français</span></button>
+            <button class="lang-opt" data-lang="tn" role="option">TN<span class="lang-name">Darija Tounsi</span></button>
+          </div>
         </div>
-        <button class="theme-toggle" aria-label="Toggle theme">dark</button>
+        <button class="theme-toggle grid h-9 place-items-center rounded-md px-4 font-mono text-[0.72rem] font-bold uppercase tracking-wider"
+                aria-label="Toggle theme">dark</button>
         <button class="hamburger" aria-label="Menu">☰</button>
       </div>
       <ul class="nav-links">
         <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
         <li><a href="#work" data-i18n="nav.work">Work</a></li>
         <li><a href="#showreel" data-i18n="nav.showreel">Showreel</a></li>
         <li><a href="#links" data-i18n="nav.links">Links</a></li>
@@ -44,60 +79,51 @@
   </nav>
 
   <!-- HERO -->
-  <header id="hero" class="hero">
-    <div class="hero-bg"></div>
+  <header id="hero" class="hero relative isolate flex min-h-screen items-center overflow-hidden px-8 py-28 text-white">
     <div class="hero-overlay"></div>
-    <div class="hero-scanline"></div>
-    <div class="hero-content">
-      <div class="hero-col hero-col-left">
-        <div class="hero-live"><span class="rec-dot"></span>REC</div>
-        <span class="hero-handle mono"><span class="id-prefix">ID ::</span> m0uss1</span>
-        <p class="hero-sub" data-i18n="hero.sub">Designer, video editor &amp; developer crafting cinematic visuals and clean interfaces.</p>
+    <div class="hero-scanbar"></div>
+    <div class="hero-content relative z-[2] mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-8 md:grid-cols-2">
+      <div class="hero-col flex flex-col items-start text-left">
+        <div class="hero-live mb-4 inline-flex items-center gap-2 border border-[#D90429]/50 px-4 py-1.5 font-mono text-[0.8rem] tracking-[0.2em] text-[#D90429]">
+          <span class="rec-dot"></span>REC
+        </div>
+        <span class="hero-handle mb-6 inline-flex items-center gap-2 rounded border px-4 py-1.5 font-mono text-[0.95rem] text-[#D90429]">
+          <span class="id-prefix text-[var(--glow)]">ID ::</span> m0uss1
+        </span>
+        <p class="hero-sub max-w-[440px] text-[clamp(1rem,2.2vw,1.25rem)] text-[#B0B0B8]" data-i18n="hero.sub">Designer, video editor &amp; developer crafting cinematic visuals and clean interfaces.</p>
       </div>
-      <div class="hero-col hero-col-right">
-        <h1><span id="scramble" data-text="M0USS1"></span><span class="typing-caret">_</span></h1>
-        <p class="hero-sub mono" data-i18n="about.tagline">Designer • Editor • Developer</p>
-        <div class="hero-cta">
-          <a href="#work" class="btn btn-primary">
+      <div class="hero-col flex flex-col items-start text-left md:items-end md:text-right">
+        <h1 class="text-[clamp(3rem,11vw,6.5rem)] font-extrabold uppercase leading-none tracking-tight">
+          <span id="scramble" data-text="M0USS1">M0USS1</span><span class="typing-caret">_</span>
+        </h1>
+        <p class="hero-sub mono mt-5 max-w-[440px] text-[clamp(1rem,2.2vw,1.25rem)] text-[#B0B0B8] md:ml-auto" data-i18n="about.tagline">Designer • Editor • Developer</p>
+        <div class="hero-cta flex flex-wrap gap-4 md:justify-end">
+          <a href="#work" class="btn-glass on-hero px-7 py-3.5 text-base">
             <span data-i18n="hero.cta.work">View Work</span> →
           </a>
-          <a href="links.html" class="btn btn-outline" data-i18n="hero.cta.hire">
+          <a href="links.html" class="btn-glass on-hero ghost px-7 py-3.5 text-base" data-i18n="hero.cta.hire">
             <span>Hire Me</span>
           </a>
         </div>
       </div>
     </div>
-    <div class="scroll-hint">↓</div>
+    <div class="scroll-hint absolute bottom-7 left-1/2 z-[2] text-xl text-[#D90429]">↓</div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" data-i18n="about.eyebrow">About Me</div>
-      <h2 data-i18n="about.title">The person behind the edits</h2>
+  <section id="about" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="about.eyebrow">About Me</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="about.title">The person behind the edits</h2>
     </div>
-    <div class="about-grid">
+    <div class="about-grid grid grid-cols-1 items-start gap-8 md:grid-cols-[1.2fr_0.8fr] md:gap-12">
       <div class="about-text reveal">
-        <p class="lead" data-i18n="about.lead">Hi, I'm Mohammed Ali Moussi — known online as m0uss1. A designer &amp; video editor from Tunisia with a passion for craft.</p>
-        <p data-i18n="about.p1">I blend visual design, video storytelling and a bit of code to create things that stand out. My background in Bac Info (computer science) gives me a technical edge on every project.</p>
-        <p data-i18n="about.p2">From Minecraft &amp; Discord thumbnails and brand logos to full video edits, I focus on clean, bold, cinematic results.</p>
-        <div class="exp-strip">
-          <div class="exp-item">
-            <div class="exp-num">6<span>+</span></div>
-            <div class="exp-label" data-i18n="about.exp.years">Years</div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-num">7</div>
-            <div class="exp-label" data-i18n="about.exp.months">Months</div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-num">99<span>+</span></div>
-            <div class="exp-label" data-i18n="about.exp.projects">Projects</div>
-          </div>
-        </div>
-        <div style="margin-top:1.2rem">
-          <div style="color:var(--text-muted);font-size:.9rem;margin-bottom:.5rem" data-i18n="about.tools">Tools I use:</div>
-          <div class="pill-row">
+        <p class="lead mb-5 text-lg text-[var(--text)]" data-i18n="about.lead">Hi, I'm Mohammed Ali Moussi — known online as m0uss1. A designer &amp; video editor from Tunisia with a passion for craft.</p>
+        <p class="mb-5 text-[var(--text-muted)]" data-i18n="about.p1">I blend visual design, video storytelling and a bit of code to create things that stand out. My background in Bac Info (computer science) gives me a technical edge on every project.</p>
+        <p class="mb-5 text-[var(--text-muted)]" data-i18n="about.p2">From Minecraft &amp; Discord thumbnails and brand logos to full video edits, I focus on clean, bold, cinematic results.</p>
+        <div class="mt-6">
+          <div class="mb-2 text-sm text-[var(--text-muted)]" data-i18n="about.tools">Tools I use:</div>
+          <div class="pill-row mt-2 flex flex-wrap gap-2.5">
             <span class="pill">DaVinci Resolve</span>
             <span class="pill">Photoshop</span>
             <span class="pill">Illustrator</span>
@@ -105,126 +131,202 @@
             <span class="pill">HTML/CSS</span>
             <span class="pill">JavaScript</span>
             <span class="pill">Git</span>
+            <span class="pill pill-accent">tailwind</span>
           </div>
         </div>
       </div>
-      <div class="skills reveal">
-        <div class="skills-title" data-i18n="about.skills.title">Craft Tracks</div>
-        <div class="pie-grid">
-          <div class="pie-item">
+      <div class="skills reveal rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-7 shadow-[var(--shadow)]">
+        <div class="skills-title mb-5 font-mono text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]" data-i18n="about.skills.title">Craft Tracks</div>
+        <div class="pie-grid grid grid-cols-2 gap-5">
+          <div class="pie-item flex flex-col items-center gap-2.5">
             <div class="pie" data-val="90" data-label="design">
               <div class="pie-inner"><span class="pie-val">90%</span></div>
             </div>
-            <div class="pie-name" data-i18n="about.skill.design">Design</div>
+            <div class="pie-name mono text-center text-[0.8rem] text-[var(--text-muted)]" data-i18n="about.skill.design">Design</div>
           </div>
-          <div class="pie-item">
+          <div class="pie-item flex flex-col items-center gap-2.5">
             <div class="pie" data-val="95" data-label="video">
               <div class="pie-inner"><span class="pie-val">95%</span></div>
             </div>
-            <div class="pie-name" data-i18n="about.skill.video">Video Editing</div>
+            <div class="pie-name mono text-center text-[0.8rem] text-[var(--text-muted)]" data-i18n="about.skill.video">Video Editing</div>
           </div>
-          <div class="pie-item">
+          <div class="pie-item flex flex-col items-center gap-2.5">
             <div class="pie" data-val="85" data-label="motion">
               <div class="pie-inner"><span class="pie-val">85%</span></div>
             </div>
-            <div class="pie-name" data-i18n="about.skill.motion">Motion Graphics</div>
+            <div class="pie-name mono text-center text-[0.8rem] text-[var(--text-muted)]" data-i18n="about.skill.motion">Motion Graphics</div>
           </div>
-          <div class="pie-item">
+          <div class="pie-item flex flex-col items-center gap-2.5">
             <div class="pie" data-val="70" data-label="code">
               <div class="pie-inner"><span class="pie-val">70%</span></div>
             </div>
-            <div class="pie-name" data-i18n="about.skill.code">Coding</div>
+            <div class="pie-name mono text-center text-[0.8rem] text-[var(--text-muted)]" data-i18n="about.skill.code">Coding</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS TICKER -->
+  <div class="ticker my-6 w-full overflow-hidden border-y border-[var(--border)] bg-[var(--bg-elev)] py-3" aria-hidden="true">
+    <div class="ticker-track">
+      <span>DAVINCI RESOLVE&nbsp;·&nbsp;PHOTOSHOP&nbsp;·&nbsp;ILLUSTRATOR&nbsp;·&nbsp;AFTER EFFECTS&nbsp;·&nbsp;HTML/CSS&nbsp;·&nbsp;JAVASCRIPT&nbsp;·&nbsp;GIT&nbsp;·&nbsp;</span>
+      <span>DAVINCI RESOLVE&nbsp;·&nbsp;PHOTOSHOP&nbsp;·&nbsp;ILLUSTRATOR&nbsp;·&nbsp;AFTER EFFECTS&nbsp;·&nbsp;HTML/CSS&nbsp;·&nbsp;JAVASCRIPT&nbsp;·&nbsp;GIT&nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="services.eyebrow">What I Do</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="services.title">Services</h2>
+    </div>
+    <div class="services-grid mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="service-card glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7 text-left transition hover:-translate-y-1.5">
+        <div class="service-icon mb-4 text-3xl">🎨</div>
+        <h3 class="mb-2 text-lg" data-i18n="services.card.design.title">Visual Design</h3>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="services.card.design.text">Thumbnails, banners, logos and brand identities that stop the scroll.</p>
+      </div>
+      <div class="service-card glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7 text-left transition hover:-translate-y-1.5">
+        <div class="service-icon mb-4 text-3xl">🎬</div>
+        <h3 class="mb-2 text-lg" data-i18n="services.card.video.title">Video Editing</h3>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="services.card.video.text">Cinematic edits, transitions, color grading and pacing that keep viewers hooked.</p>
+      </div>
+      <div class="service-card glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7 text-left transition hover:-translate-y-1.5">
+        <div class="service-icon mb-4 text-3xl">✨</div>
+        <h3 class="mb-2 text-lg" data-i18n="services.card.motion.title">Motion Graphics</h3>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="services.card.motion.text">Animated intros, lower thirds, kinetic type and motion identity work.</p>
+      </div>
+      <div class="service-card glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7 text-left transition hover:-translate-y-1.5">
+        <div class="service-icon mb-4 text-3xl">💻</div>
+        <h3 class="mb-2 text-lg" data-i18n="services.card.code.title">Code &amp; Web</h3>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="services.card.code.text">Clean HTML/CSS/JS interfaces and custom tools built for creators.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="process.eyebrow">How It Works</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="process.title">My Process</h2>
+    </div>
+    <div class="process-grid mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="process-step glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition hover:-translate-y-1.5">
+        <span class="step-num mono mb-2 block text-4xl font-bold leading-none text-[var(--accent)] opacity-25">01</span>
+        <h4 class="mb-1.5" data-i18n="process.step1.title">Brief</h4>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="process.step1.text">You share your ideas, references and goals.</p>
+      </div>
+      <div class="process-step glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition hover:-translate-y-1.5">
+        <span class="step-num mono mb-2 block text-4xl font-bold leading-none text-[var(--accent)] opacity-25">02</span>
+        <h4 class="mb-1.5" data-i18n="process.step2.title">Concept</h4>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="process.step2.text">I sketch directions and lock a creative tone.</p>
+      </div>
+      <div class="process-step glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition hover:-translate-y-1.5">
+        <span class="step-num mono mb-2 block text-4xl font-bold leading-none text-[var(--accent)] opacity-25">03</span>
+        <h4 class="mb-1.5" data-i18n="process.step3.title">Edit</h4>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="process.step3.text">I craft, refine and iterate on the details.</p>
+      </div>
+      <div class="process-step glow-card reveal rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 transition hover:-translate-y-1.5">
+        <span class="step-num mono mb-2 block text-4xl font-bold leading-none text-[var(--accent)] opacity-25">04</span>
+        <h4 class="mb-1.5" data-i18n="process.step4.title">Deliver</h4>
+        <p class="text-sm text-[var(--text-muted)]" data-i18n="process.step4.text">Final files delivered, clean and ready to use.</p>
       </div>
     </div>
   </section>
 
   <!-- WORK -->
-  <section id="work">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" data-i18n="work.eyebrow">Portfolio</div>
-      <h2 data-i18n="work.title">Selected Work</h2>
-      <p data-i18n="work.sub">A collection of thumbnails, logos, banners and video edits. Hover to preview.</p>
+  <section id="work" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="work.eyebrow">Portfolio</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="work.title">Selected Work</h2>
+      <p class="mx-auto max-w-[600px] text-[var(--text-muted)]" data-i18n="work.sub">A collection of thumbnails, logos, banners and video edits. Hover to preview.</p>
     </div>
-    <div class="filter-bar reveal">
+    <div class="filter-bar reveal mb-10 flex flex-wrap justify-center gap-3">
       <button class="filter-btn active" data-filter="all" data-i18n="work.filter.all">All</button>
       <button class="filter-btn" data-filter="thumbnails" data-i18n="work.filter.thumbnails">Thumbnails</button>
       <button class="filter-btn" data-filter="branding" data-i18n="work.filter.branding">Logos &amp; Banners</button>
       <button class="filter-btn" data-filter="video" data-i18n="work.filter.video">Video</button>
-      <button class="filter-btn" data-filter="code" data-i18n="work.filter.code">Code</button>
+      <button class="filter-btn" data-filter="youtube" data-i18n="work.filter.youtube">YouTube</button>
     </div>
-    <div class="gallery reveal">
-      <div class="card" data-category="thumbnails" data-image="assets/images/work-1.png">
-        <img src="assets/images/work-1.png" alt="Minecraft Thumbnail" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.1">Minecraft Thumbnail</h3><span data-i18n="work.filter.thumbnails">Thumbnails</span></div>
+    <div class="gallery reveal" data-src="index"></div>
+    <div class="mt-10 text-center">
+      <a href="gallery.html" class="btn-glass px-7 py-3.5" data-i18n="work.seeMore">
+        <span>See all work</span> →
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="testi.eyebrow">Kind Words</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="testi.title">What clients say</h2>
+    </div>
+    <div class="testi-grid reveal mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div class="testi-card glow-card flex flex-col gap-3 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7">
+        <div class="testi-stars text-[var(--accent)] tracking-[0.15em]">★★★★★</div>
+        <p class="text-[var(--text)] italic" data-i18n="testi.q1">"Amazing thumbnails — my click-through rate doubled after the redesign."</p>
+        <span class="testi-name mono text-[var(--text-muted)]" data-i18n="testi.a1">— Client, YouTube</span>
       </div>
-      <div class="card" data-category="branding" data-image="assets/images/work-2.png">
-        <img src="assets/images/work-2.png" alt="Discord Server Banner" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.2">Discord Server Banner</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
+      <div class="testi-card glow-card flex flex-col gap-3 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7">
+        <div class="testi-stars text-[var(--accent)] tracking-[0.15em]">★★★★★</div>
+        <p class="text-[var(--text)] italic" data-i18n="testi.q2">"Fast, creative and so clean. The edit matched my brand perfectly."</p>
+        <span class="testi-name mono text-[var(--text-muted)]" data-i18n="testi.a2">— Client, Streamer</span>
       </div>
-      <div class="card" data-category="branding" data-image="assets/images/work-3.png">
-        <img src="assets/images/work-3.png" alt="Gaming Logo" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.3">Gaming Logo</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
-      </div>
-      <div class="card" data-category="video" data-image="assets/images/work-4.png">
-        <img src="assets/images/work-4.png" alt="Video Edit" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.4">Video Edit</h3><span data-i18n="work.filter.video">Video</span></div>
-      </div>
-      <div class="card" data-category="thumbnails" data-image="assets/images/work-5.png">
-        <img src="assets/images/work-5.png" alt="Animated Thumbnail" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.5">Animated Thumbnail</h3><span data-i18n="work.filter.thumbnails">Thumbnails</span></div>
-      </div>
-      <div class="card" data-category="branding" data-image="assets/images/work-6.png">
-        <img src="assets/images/work-6.png" alt="Brand Icon" loading="lazy" />
-        <div class="card-overlay"><h3 data-i18n="work.card.title.6">Brand Icon</h3><span data-i18n="work.filter.branding">Logos &amp; Banners</span></div>
+      <div class="testi-card glow-card flex flex-col gap-3 rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-7">
+        <div class="testi-stars text-[var(--accent)] tracking-[0.15em]">★★★★★</div>
+        <p class="text-[var(--text)] italic" data-i18n="testi.q3">"Professional from brief to delivery. Highly recommended."</p>
+        <span class="testi-name mono text-[var(--text-muted)]" data-i18n="testi.a3">— Client, Brand</span>
       </div>
     </div>
-    <p class="hint" data-i18n="work.hint">Drop your design &amp; video files into assets/images to replace these placeholders.</p>
   </section>
 
   <!-- SHOWREEL -->
-  <section id="showreel">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" data-i18n="showreel.eyebrow">Showreel</div>
-      <h2 data-i18n="showreel.title">My Work in Motion</h2>
+  <section id="showreel" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="showreel.eyebrow">Showreel</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="showreel.title">My Work in Motion</h2>
     </div>
-    <div class="showreel-box reveal">
-      <div class="showreel-video">
-        <div class="showreel-placeholder">
-          <div class="big">▶</div>
+    <div class="showreel-box reveal overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow)]">
+      <div class="showreel-video grid aspect-video w-full place-items-center bg-[linear-gradient(135deg,#000,#1a0508)]">
+        <div class="showreel-placeholder mono text-center text-[var(--text-muted)]">
+          <div class="big mb-2.5 text-5xl text-[#D90429]">▶</div>
           <div data-i18n="showreel.coming">SHOWREEL COMING SOON</div>
         </div>
       </div>
-      <div class="showreel-note" data-i18n="showreel.note">Drop your showreel video in assets/videos/showreel.mp4 and it will play here.</div>
+      <div class="showreel-note p-5 text-center text-sm text-[var(--text-muted)]" data-i18n="showreel.note">Drop your showreel video in assets/videos/showreel.mp4 and it will play here.</div>
     </div>
   </section>
 
   <!-- LINKS -->
-  <section id="links">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" data-i18n="links.eyebrow">Connect</div>
-      <h2 data-i18n="links.title">Find me everywhere</h2>
+  <section id="links" class="mx-auto max-w-[1100px] px-6 py-20">
+    <div class="section-head reveal mb-12 text-center">
+      <div class="section-eyebrow text-sm uppercase tracking-[0.15em] text-[var(--accent)]" data-i18n="links.eyebrow">Connect</div>
+      <h2 class="mb-2 text-[clamp(2rem,5vw,3rem)] font-bold" data-i18n="links.title">Find me everywhere</h2>
     </div>
-    <div class="links-panel reveal">
-      <p style="color:var(--text-muted);margin-bottom:1.5rem" data-i18n="links.panel">Get all my socials &amp; latest work on my links hub — just like a link-in-bio page.</p>
-      <a href="links.html" class="btn btn-primary" data-i18n="links.open">Open My Links</a>
+    <div class="links-panel reveal rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-10 text-center shadow-[var(--shadow)]">
+      <p class="mb-6 text-[var(--text-muted)]" data-i18n="links.panel">Get all my socials &amp; latest work on my links hub — just like a link-in-bio page.</p>
+      <a href="links.html" class="btn-glass px-7 py-3.5" data-i18n="links.open">Open My Links</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="border-t border-[var(--border)] px-6 py-10 text-center text-sm text-[var(--text-muted)]">
     <p><span data-i18n="footer.rights">© m0uss1. All rights reserved.</span> · <span data-i18n="footer.made">Made with</span>
-      <span class="heart">♥</span>
+      <span class="heart text-[var(--accent)]">♥</span>
       <span data-i18n="footer.by">by m0uss1</span></p>
     <br />
-    <a href="#hero" style="color:var(--accent);text-decoration:none" data-i18n="footer.backTop">Back to top</a>
+    <a href="#hero" class="text-[var(--accent)] no-underline" data-i18n="footer.backTop">Back to top</a>
   </footer>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <img id="lightbox-img" src="" alt="Work preview" />
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
+    <div id="lightbox-media" class="lightbox-media"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 
   <script src="js/i18n.js"></script>
