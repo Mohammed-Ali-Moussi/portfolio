@@ -1,0 +1,181 @@
+{
+  "updated": "2026-08-30T15:11:40",
+  "items": [
+    {
+      "id": "w1",
+      "type": "thumbnails",
+      "year": "2026",
+      "featured": true,
+      "ratio": "16:9",
+      "media": {
+        "kind": "image",
+        "src": "assets/images/work-1.png"
+      },
+      "title": {
+        "en": "Minecraft YT Logo",
+        "fr": "Logo Minecraft YT",
+        "tn": "لوقو ماينكرافت"
+      },
+      "desc": {
+        "en": "Gaming logo pack for a Minecraft YouTube channel.",
+        "fr": "Pack de logos gaming pour une chaîne YouTube Minecraft.",
+        "tn": "لوڨو قيمينق لكانال يوتيوب ماينكرافت."
+      },
+      "tags": [
+        "minecraft",
+        "logo"
+      ]
+    },
+    {
+      "id": "w2",
+      "type": "branding",
+      "year": "2026",
+      "featured": true,
+      "ratio": "free",
+      "media": {
+        "kind": "image",
+        "src": "assets/images/work-2.png"
+      },
+      "title": {
+        "en": "Discord Server Banner",
+        "fr": "Bannière serveur Discord",
+        "tn": "بانر سيرفر ديسكورد"
+      },
+      "desc": {
+        "en": "Welcome banner for a community Discord server.",
+        "fr": "Bannière de bienvenue pour un serveur Discord communautaire.",
+        "tn": "بانر ترحيب لسيرفر ديسكورد."
+      },
+      "tags": [
+        "discord",
+        "banner"
+      ]
+    },
+    {
+      "id": "w3",
+      "type": "branding",
+      "year": "2026",
+      "featured": true,
+      "ratio": "1:1",
+      "media": {
+        "kind": "image",
+        "src": "assets/images/work-3.png"
+      },
+      "title": {
+        "en": "Gaming Logo",
+        "fr": "Logo Gaming",
+        "tn": "لوقو قيمينق"
+      },
+      "desc": {
+        "en": "Clean esports-style monogram with a bold identity.",
+        "fr": "Monogramme esport épuré avec une identité affirmée.",
+        "tn": "مونوڨرام بلون رياضي بوضوح ونويع."
+      },
+      "tags": [
+        "esports",
+        "logo"
+      ]
+    },
+    {
+      "id": "w4",
+      "type": "video",
+      "year": "2026",
+      "featured": true,
+      "ratio": "16:9",
+      "media": {
+        "kind": "image",
+        "src": "assets/images/work-4.png"
+      },
+      "title": {
+        "en": "Video Edit",
+        "fr": "Montage vidéo",
+        "tn": "مونتاج فيديو"
+      },
+      "desc": {
+        "en": "Full edit with pacing, cuts and color grade.",
+        "fr": "Montage complet rythme, coupes et étalonnage.",
+        "tn": "مونتاج كامل مع الإيقاع والقص والتركيب."
+      },
+      "tags": [
+        "edit",
+        "export"
+      ]
+    },
+    {
+      "id": "w5",
+      "type": "thumbnails",
+      "year": "2026",
+      "featured": true,
+      "ratio": "16:9",
+      "media": {
+        "kind": "gif",
+        "src": "assets/images/work-5.png"
+      },
+      "title": {
+        "en": "Animated Thumbnail",
+        "fr": "Vignette animée",
+        "tn": "ثومبنيل متحرّك"
+      },
+      "desc": {
+        "en": "Animated thumbnail concept with motion accents.",
+        "fr": "Concept de vignette animée avec accents dynamiques.",
+        "tn": "تصور ثومبنيل متحرك بالحركة."
+      },
+      "tags": [
+        "animated",
+        "thumbnail"
+      ]
+    },
+    {
+      "id": "w6",
+      "type": "branding",
+      "year": "2026",
+      "featured": true,
+      "ratio": "1:1",
+      "media": {
+        "kind": "image",
+        "src": "assets/images/work-6.png"
+      },
+      "title": {
+        "en": "Brand Icon",
+        "fr": "Icône de marque",
+        "tn": "أيقونة ماركة"
+      },
+      "desc": {
+        "en": "Icon set for a creator brand identity.",
+        "fr": "Jeu d’icônes pour l’identité d’un créateur.",
+        "tn": "مجموعة أيقونات لبراند كرياتور."
+      },
+      "tags": [
+        "icon",
+        "brand"
+      ]
+    },
+    {
+      "id": "w7",
+      "type": "youtube",
+      "year": "2026",
+      "featured": false,
+      "ratio": "16:9",
+      "media": {
+        "kind": "youtube",
+        "videoId": "aqz-KE-bpKQ",
+        "src": ""
+      },
+      "title": {
+        "en": "Showreel Reel 2026",
+        "fr": "Showreel 2026",
+        "tn": "شووريل 2026"
+      },
+      "desc": {
+        "en": "A cut of my latest video work — embedded from YouTube.",
+        "fr": "Un condensé de mes derniers travaux vidéo — intégré depuis YouTube.",
+        "tn": "تشكيلة أحدث أعمالي — مدرجة من يوتيوب."
+      },
+      "tags": [
+        "showreel",
+        "video"
+      ]
+    }
+  ]
+}
