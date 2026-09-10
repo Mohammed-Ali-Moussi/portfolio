@@ -988,11 +988,20 @@ section {
   box-shadow: var(--shadow);
 }
 .showreel-video {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
-  display: grid;
-  place-items: center;
+  height: 0;
+  padding-bottom: 56.25%;
   background: linear-gradient(135deg, #000, #1a0508);
+}
+.showreel-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
 }
 .showreel-placeholder {
   text-align: center;
