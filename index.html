@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#2264b8" />
+  <meta name="description" content="Portfolio of a full stack creative — design, motion and development." />
+  <title>Portfolio — Full Stack Creative</title>
+  <link rel="preload" as="image" href="animations/home.webp" />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="styles.css" />
+  <noscript>
+    <style>
+      .hero--icon-intro .sticker {
+        opacity: 1;
+        z-index: 4;
+      }
+
+      .hero--icon-intro {
+        cursor: url("static model/hand-cursor.png") 4 3, auto !important;
+      }
+
+      .hero--icon-intro a,
+      .hero--icon-intro button {
+        cursor: url("static model/hand-cursor.png") 4 3, pointer !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+  <main>
+    <section class="hero hero--icon-intro" id="home" aria-labelledby="hero-title">
+      <header class="hero__header">
+        <h1 class="hero__title" id="hero-title">Portfolio</h1>
+        <p class="hero__subtitle">Full Stack Creative</p>
+      </header>
+
+      <div class="hero__character" aria-hidden="true">
+        <div class="character__shadow"></div>
+        <img
+          class="character__image"
+          src="animations/home.webp"
+          alt=""
+          width="800"
+          height="1200"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="character-frame" aria-hidden="true">
+          <svg class="character-frame__box" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon class="character-frame__line" points="8,0 92,0 100,100 0,100" />
+          </svg>
+          <span class="character-frame__corner character-frame__corner--tl"></span>
+          <span class="character-frame__corner character-frame__corner--tr"></span>
+          <span class="character-frame__corner character-frame__corner--br"></span>
+          <span class="character-frame__corner character-frame__corner--bl"></span>
+        </div>
+      </div>
+
+      <nav class="hero__nav" aria-label="Portfolio sections">
+        <a class="sticker sticker--skills" href="#skills" aria-label="Go to Skills">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/brain.webp" alt="" width="227" height="191" />
+            <span class="sticker__label">Skills</span>
+          </span>
+        </a>
+
+        <a class="sticker sticker--projects" href="#projects" aria-label="Go to Projects">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/folder.webp" alt="" width="206" height="174" />
+            <span class="sticker__label">Projects</span>
+          </span>
+        </a>
+
+        <a class="sticker sticker--about" href="#about" aria-label="Go to About Me">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/id.webp" alt="" width="226" height="195" />
+            <span class="sticker__label">About Me</span>
+          </span>
+        </a>
+
+        <a class="sticker sticker--experience" href="#experience" aria-label="Go to Experience">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/brief case.webp" alt="" width="219" height="181" />
+            <span class="sticker__label">Experience</span>
+          </span>
+        </a>
+
+        <a class="sticker sticker--showreel" href="#showreel" aria-label="Go to Showreel">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/cd.webp" alt="" width="229" height="209" />
+            <span class="sticker__label">Showreel</span>
+          </span>
+        </a>
+
+        <a class="sticker sticker--contact" href="#contact" aria-label="Go to Contact">
+          <span class="sticker__tilt">
+            <img class="sticker__image" src="home icons/phone.webp" alt="" width="164" height="234" />
+            <span class="sticker__label">Contact</span>
+          </span>
+        </a>
+      </nav>
+
+      <img
+        class="hero-drag-cursor"
+        src="static model/hand.webp"
+        alt=""
+        width="267"
+        height="219"
+        aria-hidden="true"
+        fetchpriority="high"
+        decoding="async"
+      />
+
+      <a class="scroll-cue" href="#skills">
+        <span>Scroll Down</span>
+      </a>
+
+      <footer class="hero__footer">
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <div class="marquee__group">
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+            </div>
+            <div class="marquee__group">
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+              <span class="marquee__item">HIC Design . Motion Graphic .</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <h2 class="skills__heading" id="skills-title">Skills</h2>
+
+      <div class="skills__radar" role="img" aria-label="Skills radar chart showing video editing, creativity, ideation, vibe coding, design and 3D.">
+        <svg class="skills__radar-chart" viewBox="0 0 600 600" aria-hidden="true">
+          <g class="skills__radar-grid">
+            <polygon points="300,80 490.5,190 490.5,410 300,520 109.5,410 109.5,190" />
+            <polygon points="300,154.8 425.8,227.4 425.8,372.6 300,445.2 174.2,372.6 174.2,227.4" />
+            <polygon points="300,227.4 362.9,263.7 362.9,336.3 300,372.6 237.1,336.3 237.1,263.7" />
+            <line x1="300" y1="300" x2="300" y2="80" />
+            <line x1="300" y1="300" x2="490.5" y2="190" />
+            <line x1="300" y1="300" x2="490.5" y2="410" />
+            <line x1="300" y1="300" x2="300" y2="520" />
+            <line x1="300" y1="300" x2="109.5" y2="410" />
+            <line x1="300" y1="300" x2="109.5" y2="190" />
+          </g>
+          <polygon class="skills__radar-fill" points="300,95 442.9,217.5 460.2,392.5 300,455 145.8,389 151.1,214" />
+        </svg>
+        <span class="skills__radar-label skills__radar-label--top">Video Editing</span>
+        <span class="skills__radar-label skills__radar-label--tr">Creativity</span>
+        <span class="skills__radar-label skills__radar-label--br">Ideation</span>
+        <span class="skills__radar-label skills__radar-label--bottom">Vibe Coding</span>
+        <span class="skills__radar-label skills__radar-label--bl">Design</span>
+        <span class="skills__radar-label skills__radar-label--tl">3D Stuff</span>
+      </div>
+
+      <div class="skills__tools">
+        <div class="skills__tools-backdrop" aria-hidden="true">
+          <span>The Tools</span>
+          <span>The Tools</span>
+          <span>The Tools</span>
+        </div>
+        <p class="skills__tools-main">The Tools</p>
+      </div>
+
+      <div class="skills__character" aria-hidden="true">
+        <img
+          class="skills__character-image"
+          src="static model/handupp.webp"
+          alt=""
+          width="768"
+          height="924"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="skills__curve" aria-hidden="true"></div>
+      <span class="skills__experience" aria-hidden="true">Experience</span>
+    </section>
+
+    <section class="experience" id="experience" aria-labelledby="experience-title">
+      <h2 class="sr-only" id="experience-title">Experience</h2>
+      <span class="page-tag experience__tag" aria-hidden="true">02</span>
+
+      <div class="experience__stage">
+        <div class="experience__character" aria-hidden="true">
+          <img
+            src="static model/cards.webp"
+            alt=""
+            width="948"
+            height="2016"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <article class="exp-card exp-card--bardo exp-card--art">
+          <h3 class="sr-only">Bardo</h3>
+          <img
+            src="static model/card-bardo.webp"
+            alt="Marketing agency since 2022. Position: Co founder, social media, brand designer, animation and motion graphic, ideation and script writing."
+            width="720"
+            height="520"
+            loading="lazy"
+            decoding="async"
+          />
+        </article>
+
+        <article class="exp-card exp-card--aaber exp-card--art">
+          <h3 class="sr-only">Aaber Sabeel</h3>
+          <img
+            src="static model/aaber-sabeel.webp"
+            alt="Clothing brand since 2025. Position: Co founder, product, social media designer, ideation, branding."
+            width="720"
+            height="520"
+            loading="lazy"
+            decoding="async"
+          />
+        </article>
+
+        <article class="exp-card exp-card--other">
+          <h3>Other Stuff</h3>
+          <ul class="exp-card__list">
+            <li>Founder of MA7ROUS brand</li>
+            <li>Member of the media team of the LEO Nabeul</li>
+            <li>A member of Radio Web Nabeul</li>
+          </ul>
+        </article>
+
+        <img
+          class="experience__cursor"
+          src="static model/hand.webp"
+          alt=""
+          width="267"
+          height="219"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <span class="page-tag projects__tag" aria-hidden="true">03</span>
+      <div class="projects__faller" aria-hidden="true">
+        <img src="animations/fall.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />
+      </div>
+      <h2 class="projects__title" id="projects-title">Projects</h2>
+
+      <div class="projects__grid">
+        <div class="project-folder">
+          <img src="folders/1.webp" alt="Thumbnails folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-folder">
+          <img src="folders/2.webp" alt="Logos folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-folder">
+          <img src="folders/3.webp" alt="Branding folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-folder">
+          <img src="folders/4.webp" alt="Posts folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-folder">
+          <img src="folders/5.webp" alt="Posters folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+        <div class="project-folder">
+          <img src="folders/6.webp" alt="Website folder" width="487" height="400" loading="lazy" decoding="async" />
+        </div>
+      </div>
+
+      <p class="projects__note">Only new work is available</p>
+    </section>
+
+    <section class="showreel" id="showreel" aria-labelledby="showreel-title">
+      <h2 class="sr-only" id="showreel-title">Showreel</h2>
+      <span class="page-tag showreel__tag" aria-hidden="true">04</span>
+      <p class="showreel__intro">In this piece of art I put all my video editing effort so enjoy it</p>
+
+      <div class="showreel__hud" aria-hidden="true">
+        <span class="showreel__hud-play">Play</span>
+        <span class="showreel__hud-time" data-showreel-time>SP 00:00:00</span>
+      </div>
+
+      <button class="showreel__disc-button" type="button" aria-label="Play showreel">
+        <span class="showreel__disc" aria-hidden="true">
+          <span class="showreel__disc-art">
+            <img src="static model/cd.webp" alt="" width="888" height="888" loading="lazy" decoding="async" />
+          </span>
+        </span>
+      </button>
+
+      <dialog class="showreel__modal" data-video-src="" aria-label="Showreel video player">
+        <div class="showreel__modal-panel">
+          <button class="showreel__close" type="button" aria-label="Close showreel">&times;</button>
+          <video class="showreel__video" controls playsinline preload="metadata"></video>
+          <p class="showreel__video-fallback">Showreel video coming soon</p>
+        </div>
+      </dialog>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <span class="page-tag about__tag" aria-hidden="true">05</span>
+      <header class="about__header">
+        <h2 class="about__title" id="about-title">About Me</h2>
+      </header>
+
+      <div class="about__copy">
+        <p>Hi, I am Mohammed Ali Moussi. I am a designer and video editor. I have some experience in coding and 3D modeling &amp; animation. I like doing everything on my own, so I try to learn it all. My clients always become my friends. I love what I am doing, that's why I do it with passion.</p>
+      </div>
+
+      <div class="about__character" aria-hidden="true">
+        <span class="about__shadow"></span>
+        <img
+          src="animations/about-start.webp"
+          data-animation-src="animations/about.webp"
+          alt=""
+          width="800"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <span class="page-tag contact__tag" aria-hidden="true">06</span>
+      <header class="contact__header">
+        <h2 class="contact__title" id="contact-title">Contact</h2>
+        <p class="contact__subtitle">You can find me here</p>
+      </header>
+
+      <div class="contact__links">
+        <a class="contact__link" href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">
+          <span class="contact__icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="chrome-instagram" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="0.32" stop-color="#b9bec6" />
+                  <stop offset="0.54" stop-color="#4b525c" />
+                  <stop offset="0.72" stop-color="#eef0f3" />
+                  <stop offset="1" stop-color="#858d97" />
+                </linearGradient>
+              </defs>
+              <rect x="9" y="9" width="46" height="46" rx="14" fill="none" stroke="url(#chrome-instagram)" stroke-width="5" />
+              <circle cx="32" cy="32" r="12" fill="none" stroke="url(#chrome-instagram)" stroke-width="5" />
+              <circle cx="47" cy="17" r="3" fill="url(#chrome-instagram)" />
+            </svg>
+          </span>
+          <span class="contact__label">Instagram</span>
+        </a>
+
+        <a class="contact__link" href="https://wa.me/" target="_blank" rel="noreferrer noopener">
+          <span class="contact__icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="chrome-whatsapp" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="0.3" stop-color="#c3c8cf" />
+                  <stop offset="0.52" stop-color="#555c66" />
+                  <stop offset="0.72" stop-color="#f2f3f5" />
+                  <stop offset="1" stop-color="#7f8791" />
+                </linearGradient>
+              </defs>
+              <path d="M32 7a24.5 24.5 0 0 0-21 37.2L8 57l13.2-2.9A24.5 24.5 0 1 0 32 7Z" fill="none" stroke="url(#chrome-whatsapp)" stroke-width="5" />
+              <path d="M24 19c-1.2 0-2.4.5-3.1 1.3-1.3 1.4-2.1 3.5-1.2 6.3 1 3 3.3 7.3 7.5 11.5 4.2 4.2 8.5 6.5 11.5 7.5 2.8.9 4.9.1 6.3-1.2.8-.7 1.3-1.9 1.3-3.1l-.1-3-6.4-2.8-2.9 3.2c-3.2-1.5-7.3-5.6-8.8-8.8l3.2-2.9-2.8-6.4-3-.1Z" fill="url(#chrome-whatsapp)" />
+            </svg>
+          </span>
+          <span class="contact__label">WhatsApp</span>
+        </a>
+
+        <a class="contact__link" href="mailto:">
+          <span class="contact__icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <linearGradient id="chrome-email" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset="0.3" stop-color="#bfc4cb" />
+                  <stop offset="0.55" stop-color="#4c535d" />
+                  <stop offset="0.74" stop-color="#f0f1f3" />
+                  <stop offset="1" stop-color="#858d97" />
+                </linearGradient>
+              </defs>
+              <rect x="7" y="15" width="50" height="34" rx="7" fill="none" stroke="url(#chrome-email)" stroke-width="5" />
+              <path d="m10 19 22 18 22-18" fill="none" stroke="url(#chrome-email)" stroke-width="5" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="contact__label">Email</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const hero = document.querySelector(".hero");
+      const frame = document.querySelector(".character-frame");
+      const line = document.querySelector(".character-frame__line");
+      const nodes = {
+        tl: document.querySelector(".character-frame__corner--tl"),
+        tr: document.querySelector(".character-frame__corner--tr"),
+        br: document.querySelector(".character-frame__corner--br"),
+        bl: document.querySelector(".character-frame__corner--bl"),
+      };
+
+      if (!frame || !line || Object.values(nodes).some((node) => !node)) return;
+
+      const points = [
+        { node: nodes.tl, bx: 8, by: 0, x: 0, y: 0, tx: 0, ty: 0, next: 0 },
+        { node: nodes.tr, bx: 92, by: 0, x: 0, y: 0, tx: 0, ty: 0, next: 0 },
+        { node: nodes.br, bx: 100, by: 100, x: 0, y: 0, tx: 0, ty: 0, next: 0 },
+        { node: nodes.bl, bx: 0, by: 100, x: 0, y: 0, tx: 0, ty: 0, next: 0 },
+      ];
+
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const maxOffset = 4.5;
+      let moving = !reduce.matches;
+      let pointer = null;
+      let raf = 0;
+
+      const random = (amount) => (Math.random() * 2 - 1) * amount;
+
+      const retarget = (point) => {
+        point.tx = random(maxOffset);
+        point.ty = random(maxOffset);
+        point.next = performance.now() + 650 + Math.random() * 1400;
+      };
+
+      const draw = (now) => {
+        const width = frame.clientWidth || 1;
+        const height = frame.clientHeight || 1;
+        const coords = [];
+        let followed = null;
+        let pointerX = 0;
+        let pointerY = 0;
+
+        if (pointer) {
+          const rect = frame.getBoundingClientRect();
+          pointerX = pointer.clientX - rect.left;
+          pointerY = pointer.clientY - rect.top;
+          let nearest = Infinity;
+
+          for (const point of points) {
+            const baseX = (point.bx / 100) * width;
+            const baseY = (point.by / 100) * height;
+            const distance = Math.hypot(pointerX - baseX, pointerY - baseY);
+            if (distance < nearest) {
+              nearest = distance;
+              followed = point;
+            }
+          }
+
+          const radius = Math.max(160, Math.min(280, Math.min(width, height) * 0.75));
+          if (nearest > radius) followed = null;
+        }
+
+        for (const point of points) {
+          if (moving) {
+            if (point === followed) {
+              const baseX = (point.bx / 100) * width;
+              const baseY = (point.by / 100) * height;
+              let dx = pointerX - baseX;
+              let dy = pointerY - baseY;
+              const maxFollow = Math.min(120, Math.min(width, height) * 0.55);
+              const distance = Math.hypot(dx, dy);
+
+              if (distance > maxFollow) {
+                dx *= maxFollow / distance;
+                dy *= maxFollow / distance;
+              }
+
+              point.following = true;
+              point.tx = dx;
+              point.ty = dy;
+            } else {
+              if (point.following) {
+                point.following = false;
+                point.next = now;
+              }
+              if (now >= point.next) retarget(point);
+            }
+
+            const speed = point === followed ? 0.18 : 0.065;
+            point.x += (point.tx - point.x) * speed;
+            point.y += (point.ty - point.y) * speed;
+          } else {
+            point.x = 0;
+            point.y = 0;
+          }
+
+          const x = point.bx + (point.x / width) * 100;
+          const y = point.by + (point.y / height) * 100;
+          point.node.style.left = `${x}%`;
+          point.node.style.top = `${y}%`;
+          coords.push(`${x},${y}`);
+        }
+
+        line.setAttribute("points", coords.join(" "));
+        if (moving) raf = requestAnimationFrame(draw);
+      };
+
+      for (const point of points) {
+        point.next = performance.now() + Math.random() * 900;
+      }
+
+      draw(performance.now());
+
+      if (hero) {
+        hero.addEventListener(
+          "pointermove",
+          (event) => {
+            pointer = { clientX: event.clientX, clientY: event.clientY };
+          },
+          { passive: true }
+        );
+        hero.addEventListener("pointerleave", () => {
+          pointer = null;
+        });
+      }
+
+      reduce.addEventListener("change", (event) => {
+        moving = !event.matches;
+        if (event.matches) pointer = null;
+        cancelAnimationFrame(raf);
+        draw(performance.now());
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const hero = document.querySelector(".hero--icon-intro");
+      if (!hero) return;
+
+      const character = hero.querySelector(".hero__character");
+      const nav = hero.querySelector(".hero__nav");
+      const cursor = hero.querySelector(".hero-drag-cursor");
+      if (!character || !nav || !cursor) return;
+
+      const stickers = [...nav.querySelectorAll(".sticker")];
+      if (!stickers.length) return;
+
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const wait = (duration) => new Promise((resolve) => setTimeout(resolve, duration));
+      let running = true;
+      let cursorRaf = 0;
+      let dragTarget = null;
+      let cursorX = 0;
+      let cursorY = 0;
+      let cursorTilt = 0;
+
+      const haltCursor = () => {
+        cancelAnimationFrame(cursorRaf);
+        dragTarget = null;
+      };
+
+      const stopCursor = () => {
+        haltCursor();
+        cursorTilt = 0;
+        cursor.classList.remove("is-active");
+      };
+
+      const finish = () => {
+        running = false;
+        stopCursor();
+        nav.inert = false;
+        cursor.style.visibility = "hidden";
+
+        for (const animation of cursor.getAnimations()) animation.cancel();
+
+        for (const sticker of stickers) {
+          for (const animation of sticker.getAnimations()) animation.cancel();
+          sticker.style.removeProperty("transform");
+          sticker.style.removeProperty("opacity");
+          sticker.style.removeProperty("z-index");
+        }
+
+        hero.classList.remove("hero--icon-intro");
+      };
+
+      if (reduce.matches || typeof stickers[0].animate !== "function") {
+        finish();
+        return;
+      }
+
+      nav.inert = true;
+
+      const getDragData = (sticker, index) => {
+        const characterRect = character.getBoundingClientRect();
+        const rect = sticker.getBoundingClientRect();
+        const angle = (index / stickers.length) * Math.PI * 2 + Math.PI / 6;
+        const spreadX = Math.min(characterRect.width * 0.16, 92);
+        const spreadY = Math.min(characterRect.height * 0.12, 74);
+        const startX = characterRect.left + characterRect.width / 2 + Math.cos(angle) * spreadX;
+        const startY = characterRect.top + characterRect.height * 0.47 + Math.sin(angle) * spreadY;
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const dx = startX - centerX;
+        const dy = startY - centerY;
+        const distance = Math.hypot(dx, dy) || 1;
+        const normalX = -dy / distance;
+        const normalY = dx / distance;
+
+        return {
+          index,
+          startX,
+          startY,
+          dx,
+          dy,
+          distance,
+          normalX,
+          normalY,
+          bend: (index % 2 ? 1 : -1) * Math.min(120, distance * 0.18),
+          startRotate: dx > 0 ? 24 : -24,
+          duration: 230 + Math.min(70, distance * 0.04),
+        };
+      };
+
+      const followCursor = () => {
+        if (!dragTarget) return;
+
+        const rect = dragTarget.getBoundingClientRect();
+        const heroRect = hero.getBoundingClientRect();
+        const targetX = rect.left + rect.width / 2 - heroRect.left;
+        const targetY = rect.top + rect.height / 2 - heroRect.top;
+        const dx = targetX - cursorX;
+        cursorX += dx * 0.6;
+        cursorY += (targetY - cursorY) * 0.6;
+        cursorTilt = Math.max(-12, Math.min(12, dx * 0.5));
+
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%) rotate(${cursorTilt}deg)`;
+        cursorRaf = requestAnimationFrame(followCursor);
+      };
+
+      const grab = (sticker, startX, startY) => {
+        const heroRect = hero.getBoundingClientRect();
+        cursorX = startX - heroRect.left;
+        cursorY = startY - heroRect.top;
+        cursorTilt = 0;
+        cursor.style.visibility = "visible";
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+        cursor.classList.add("is-active");
+        dragTarget = sticker;
+        cancelAnimationFrame(cursorRaf);
+        cursorRaf = requestAnimationFrame(followCursor);
+      };
+
+      const dragSticker = async (sticker, index) => {
+        const data = getDragData(sticker, index);
+        const { dx, dy, normalX, normalY, bend, startRotate, duration, startX, startY } = data;
+        const control1X = dx * 0.62 + normalX * bend;
+        const control1Y = dy * 0.62 + normalY * bend;
+        const control2X = dx * 0.16 - normalX * bend * 0.6;
+        const control2Y = dy * 0.16 - normalY * bend * 0.6;
+        const frames = [0, 0.14, 0.32, 0.52, 0.72, 0.88, 1].map((t) => {
+          const rest = 1 - t;
+          const x =
+            rest * rest * rest * dx +
+            3 * rest * rest * t * control1X +
+            3 * rest * t * t * control2X;
+          const y =
+            rest * rest * rest * dy +
+            3 * rest * rest * t * control1Y +
+            3 * rest * t * t * control2Y;
+          const rotation =
+            startRotate * rest * (1 - 0.22 * Math.sin(Math.PI * t)) +
+            Math.sin(t * Math.PI * 2) * 3;
+
+          return {
+            transform: `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`,
+            opacity: Math.min(1, t / 0.12),
+            offset: t,
+          };
+        });
+
+        sticker.style.zIndex = "1";
+        sticker.style.opacity = "0";
+        sticker.style.transform = `translate3d(${dx}px, ${dy}px, 0) rotate(${startRotate}deg)`;
+        grab(sticker, startX, startY);
+        await wait(30);
+        if (!running) return;
+
+        const animation = sticker.animate(frames, {
+          duration,
+          easing: "cubic-bezier(0.18, 0.72, 0.2, 1)",
+          fill: "both",
+        });
+
+        try {
+          await animation.finished;
+        } catch {
+          return;
+        }
+
+        sticker.style.transform = "translate3d(0, 0, 0) rotate(0deg)";
+        sticker.style.opacity = "1";
+        sticker.style.zIndex = "4";
+        animation.cancel();
+        sticker.style.removeProperty("transform");
+        await wait(30);
+        haltCursor();
+      };
+
+      const returnCursor = async (data) => {
+        const heroRect = hero.getBoundingClientRect();
+        const toX = data.startX - heroRect.left;
+        const toY = data.startY - heroRect.top;
+        const fromX = cursorX;
+        const fromY = cursorY;
+        const dx = toX - fromX;
+        const dy = toY - fromY;
+        const distance = Math.hypot(dx, dy) || 1;
+        const normalX = -dy / distance;
+        const normalY = dx / distance;
+        const bend = (data.index % 2 ? 1 : -1) * Math.min(110, distance * 0.16);
+        const controlX = (fromX + toX) / 2 + normalX * bend;
+        const controlY = (fromY + toY) / 2 + normalY * bend;
+        const frames = [0, 0.22, 0.46, 0.7, 0.88, 1].map((t) => {
+          const rest = 1 - t;
+          const x = rest * rest * fromX + 2 * rest * t * controlX + t * t * toX;
+          const y = rest * rest * fromY + 2 * rest * t * controlY + t * t * toY;
+          const tangentX = 2 * rest * (controlX - fromX) + 2 * t * (toX - controlX);
+          const tangentY = 2 * rest * (controlY - fromY) + 2 * t * (toY - controlY);
+          const tangentAngle = (Math.atan2(tangentY, tangentX) * 180) / Math.PI;
+          const rotation =
+            t === 0
+              ? cursorTilt
+              : t === 1
+                ? 0
+                : Math.max(-14, Math.min(14, tangentAngle * 0.22)) +
+                  Math.sin(t * Math.PI) * -6;
+
+          return {
+            transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) rotate(${rotation}deg)`,
+            offset: t,
+          };
+        });
+        const animation = cursor.animate(frames, {
+          duration: 150 + Math.min(70, distance * 0.06),
+          easing: "cubic-bezier(0.22, 0.7, 0.25, 1)",
+          fill: "both",
+        });
+
+        try {
+          await animation.finished;
+        } catch {
+          return false;
+        }
+
+        cursorX = toX;
+        cursorY = toY;
+        cursorTilt = 0;
+        cursor.style.transform = `translate3d(${toX}px, ${toY}px, 0) translate(-50%, -50%) rotate(0deg)`;
+        animation.cancel();
+        await wait(10);
+        return running;
+      };
+
+      const run = async () => {
+        await wait(80);
+
+        for (let index = 0; index < stickers.length; index += 1) {
+          if (!running) return;
+          await dragSticker(stickers[index], index);
+          if (!running) return;
+
+          if (index < stickers.length - 1) {
+            const returned = await returnCursor(getDragData(stickers[index + 1], index + 1));
+            if (!returned) return;
+          } else {
+            await wait(40);
+          }
+        }
+
+        if (running) finish();
+      };
+
+      reduce.addEventListener("change", (event) => {
+        if (event.matches) finish();
+      });
+
+      requestAnimationFrame(() => {
+        run().catch(finish);
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const section = document.querySelector(".skills");
+      if (!section) return;
+
+      const backdrop = section.querySelector(".skills__tools-backdrop");
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let ticking = false;
+
+      const reveal = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) section.classList.add("is-visible");
+          }
+        },
+        { threshold: 0.35 }
+      );
+
+      reveal.observe(section);
+
+      const updateParallax = () => {
+        ticking = false;
+        if (!backdrop) return;
+
+        if (reduce.matches) {
+          backdrop.style.removeProperty("--skills-parallax");
+          return;
+        }
+
+        const rect = section.getBoundingClientRect();
+        const offset = Math.max(-48, Math.min(48, -rect.top * 0.12));
+        backdrop.style.setProperty("--skills-parallax", `${offset}px`);
+      };
+
+      const scheduleParallax = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateParallax);
+      };
+
+      window.addEventListener("scroll", scheduleParallax, { passive: true });
+      window.addEventListener("resize", scheduleParallax);
+      reduce.addEventListener("change", scheduleParallax);
+      updateParallax();
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const dialog = document.querySelector(".showreel__modal");
+      if (!dialog) return;
+
+      const video = dialog.querySelector(".showreel__video");
+      const openers = document.querySelectorAll(".showreel__disc-button");
+      const closeButton = dialog.querySelector(".showreel__close");
+      const source = (dialog.dataset.videoSrc || "").trim();
+      const timecode = document.querySelector("[data-showreel-time]");
+      const discButton = document.querySelector(".showreel__disc-button");
+      const disc = discButton?.querySelector(".showreel__disc");
+
+      if (timecode) {
+        let seconds = 0;
+        const pad = (value) => String(value).padStart(2, "0");
+
+        const renderTimecode = () => {
+          const hours = Math.floor(seconds / 3600) % 24;
+          const minutes = Math.floor(seconds / 60) % 60;
+          timecode.textContent = `SP ${pad(hours)}:${pad(minutes)}:${pad(seconds % 60)}`;
+        };
+
+        renderTimecode();
+        window.setInterval(() => {
+          seconds = (seconds + 1) % 86400;
+          renderTimecode();
+        }, 1000);
+      }
+
+      if (discButton && disc) {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let rate = 1;
+        let targetRate = 1;
+        let rateFrame = 0;
+
+        const getSpin = () =>
+          disc
+            .getAnimations()
+            .find((animation) => animation.animationName === "disc-spin");
+
+        const easeRate = () => {
+          const spin = getSpin();
+          if (!spin || reduce.matches) {
+            rateFrame = 0;
+            return;
+          }
+
+          rate += (targetRate - rate) * 0.08;
+          if (Math.abs(targetRate - rate) < 0.005) rate = targetRate;
+          spin.playbackRate = rate;
+
+          if (rate !== targetRate) rateFrame = requestAnimationFrame(easeRate);
+          else rateFrame = 0;
+        };
+
+        const setRate = (value) => {
+          targetRate = value;
+          if (!rateFrame) rateFrame = requestAnimationFrame(easeRate);
+        };
+
+        discButton.addEventListener("pointerenter", () => setRate(0.28));
+        discButton.addEventListener("pointerleave", () => setRate(1));
+        discButton.addEventListener("focus", () => setRate(0.28));
+        discButton.addEventListener("blur", () => setRate(1));
+      }
+
+      if (source && video) {
+        video.src = source;
+        dialog.dataset.hasVideo = "true";
+      }
+
+      const openModal = () => {
+        if (dialog.open) return;
+        dialog.showModal();
+        document.documentElement.classList.add("modal-open");
+        if (video && source) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        }
+      };
+
+      const closeModal = () => {
+        if (dialog.open) dialog.close();
+      };
+
+      openers.forEach((button) => button.addEventListener("click", openModal));
+      if (closeButton) closeButton.addEventListener("click", closeModal);
+
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) closeModal();
+      });
+
+      dialog.addEventListener("close", () => {
+        document.documentElement.classList.remove("modal-open");
+        if (video) video.pause();
+      });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const image = document.querySelector(".about__character img");
+      const character = document.querySelector(".about__character");
+      if (!image || !character) return;
+
+      const source = image.dataset.animationSrc;
+      if (!source) return;
+
+      let started = false;
+
+      const play = () => {
+        if (started) return;
+        started = true;
+        const separator = source.includes("?") ? "&" : "?";
+        image.src = `${source}${separator}play=${Date.now()}`;
+      };
+
+      if (!("IntersectionObserver" in window)) {
+        play();
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          play();
+        },
+        { threshold: 0.35 }
+      );
+
+      observer.observe(character);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const section = document.querySelector(".experience");
+      const card = section?.querySelector(".exp-card--other");
+      if (!section || !card) return;
+
+      const update = () => {
+        const sectionRect = section.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        const clearance = Math.max(0, sectionRect.bottom - cardRect.top);
+        section.style.setProperty("--exp-other-clearance", `${clearance}px`);
+      };
+
+      update();
+      window.addEventListener("resize", update);
+
+      if ("ResizeObserver" in window) {
+        const observer = new ResizeObserver(update);
+        observer.observe(section);
+        observer.observe(card);
+      }
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const section = document.querySelector("#projects");
+      if (!section) return;
+
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      section.addEventListener("animationend", (event) => {
+        if (event.animationName === "projects-fall" && !reduce.matches) {
+          section.classList.add("is-shaking");
+        } else if (event.animationName === "projects-shake") {
+          section.classList.remove("is-shaking");
+        }
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !reduce.matches) {
+              section.classList.remove("is-falling", "is-shaking");
+              void section.offsetWidth;
+              section.classList.add("is-falling");
+            } else {
+              section.classList.remove("is-falling", "is-shaking");
+            }
+          }
+        },
+        { threshold: 0.45 }
+      );
+
+      observer.observe(section);
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const sections = [...document.querySelectorAll("main > section:not(#home)")];
+      if (!sections.length) return;
+
+      const textSelector =
+        ":is(h2, h3, p, li, .page-tag, .skills__radar-label, .skills__experience, .contact__label)";
+      const textTargets = sections.flatMap((section) =>
+        [...section.querySelectorAll(textSelector)].filter(
+          (element) => !element.closest("dialog") && !element.classList.contains("sr-only")
+        )
+      );
+      const revealTargets = [...textTargets, ...document.querySelectorAll(".skills__character")];
+      const order = new Map(revealTargets.map((element, index) => [element, index]));
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (reduce.matches || !("IntersectionObserver" in window)) {
+        for (const section of sections) section.classList.add("is-revealed");
+        for (const element of revealTargets) element.classList.add("is-inview");
+        return;
+      }
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-revealed");
+            sectionObserver.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.16 }
+      );
+
+      const itemObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => order.get(a.target) - order.get(b.target));
+
+          visible.forEach((entry, index) => {
+            entry.target.style.setProperty("--reveal-delay", `${index * 85}ms`);
+            entry.target.classList.add("is-inview");
+            itemObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0, rootMargin: "0px 0px -2% 0px" }
+      );
+
+      for (const section of sections) sectionObserver.observe(section);
+      for (const element of revealTargets) itemObserver.observe(element);
+    })();
+  </script>
+</body>
+</html>
