@@ -260,7 +260,7 @@
     <section class="projects" id="projects" aria-labelledby="projects-title">
       <span class="page-tag projects__tag" aria-hidden="true">03</span>
       <div class="projects__faller" aria-hidden="true">
-        <img src="animations/fall.webp" alt="" width="800" height="1200" loading="lazy" decoding="async" />
+        <img src="animations/fall-fast.webp" alt="" width="800" height="1200" loading="eager" decoding="async" />
       </div>
       <h2 class="projects__title" id="projects-title">Projects</h2>
 
@@ -337,6 +337,16 @@
           decoding="async"
         />
       </div>
+      <img
+        class="about__truck"
+        src="static model/truck.png"
+        alt=""
+        width="2048"
+        height="768"
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+      />
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
@@ -951,9 +961,11 @@
 
   <script>
     (() => {
-      const image = document.querySelector(".about__character img");
-      const character = document.querySelector(".about__character");
-      if (!image || !character) return;
+      const section = document.querySelector(".about");
+      const image = section?.querySelector(".about__character img");
+      const character = section?.querySelector(".about__character");
+      const truck = section?.querySelector(".about__truck");
+      if (!section || !image || !character || !truck) return;
 
       const source = image.dataset.animationSrc;
       if (!source) return;
@@ -965,6 +977,10 @@
         started = true;
         const separator = source.includes("?") ? "&" : "?";
         image.src = `${source}${separator}play=${Date.now()}`;
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          window.setTimeout(() => section.classList.add("is-hit"), 10000);
+        }
       };
 
       if (!("IntersectionObserver" in window)) {
@@ -1012,31 +1028,37 @@
   <script>
     (() => {
       const section = document.querySelector("#projects");
-      if (!section) return;
+      const faller = section?.querySelector(".projects__faller");
+      if (!section || !faller) return;
 
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        faller.remove();
+        return;
+      }
 
       section.addEventListener("animationend", (event) => {
-        if (event.animationName === "projects-fall" && !reduce.matches) {
-          section.classList.add("is-shaking");
-        } else if (event.animationName === "projects-shake") {
+        if (event.animationName === "projects-shake") {
           section.classList.remove("is-shaking");
         }
       });
 
       const observer = new IntersectionObserver(
         (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting && !reduce.matches) {
-              section.classList.remove("is-falling", "is-shaking");
-              void section.offsetWidth;
-              section.classList.add("is-falling");
-            } else {
-              section.classList.remove("is-falling", "is-shaking");
-            }
-          }
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          section.style.setProperty("--fall-duration", `${window.innerHeight * 0.002}s`);
+          faller.addEventListener(
+            "animationend",
+            (event) => {
+              if (event.animationName !== "projects-fall") return;
+              section.classList.add("is-shaking");
+              faller.remove();
+            },
+            { once: true }
+          );
+          section.classList.add("is-falling");
+          observer.disconnect();
         },
-        { threshold: 0.45 }
+        { threshold: 0 }
       );
 
       observer.observe(section);
